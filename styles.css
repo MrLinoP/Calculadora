@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black; /* Fondo negro */
+}
+
+.container {
+    display: flex; /* Uso flexbox para alinear la calculadora y el historial */
+    align-items: center;
+    gap: 40px;
+}
+
+.history {
+    width: 20em; /* Ancho del historial */
+    height: 40rem; /* Altura del historial */
+    background-color: #333; /* Fondo oscuro para el historial */
+    color: white; /* Texto blanco */
+    padding: 10px; /* Espaciado interno */
+    overflow-y: auto; /* Permitir desplazamiento si el contenido es demasiado grande */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-right: 20px; /* Espacio entre el historial y la calculadora */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.calculator {
+    height: 420px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #222; /* Fondo oscuro para la calculadora */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra sutil */
+    display: flex; /* Usar flexbox para centrar elementos */
+    flex-direction: column; /* Colocar elementos en columna */
+    align-items: center; /* Centrar elementos horizontalmente */
+}
+
+#display {
+    width: 100%; /* Ancho total del contenedor */
+    max-width: 380px; /* Ancho máximo para evitar que se salga de la pantalla */
+    height: 50px; /* Aumentar la altura para mayor comodidad */
+    font-size: 32px; /* Aumentar el tamaño de la fuente */
+    text-align: right;
+    margin-bottom: 20px;
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: transparent; /* Fondo transparente */
+    color: white; /* Texto blanco */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca */
+    transition: box-shadow 0.3s; /* Transición suave */
+}
+
+/* Cambiar el estilo al enfocar el input */
+#display:focus {
+    outline: none; /* Eliminar el contorno predeterminado */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Sombra más intensa al enfocar */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas para los botones */
+    gap: 10px;
+    width: 100%; /* Ancho total del contenedor de botones */
+    max-width: 400px; /* Ancho máximo para que coincida con el display */
+}
+
+button {
+    font-family: 'Arial', 'Helvetica', 'Verdana', sans-serif; /* Pila de fuentes sans-serif */
+    font-weight: bold;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Fondo negro para los botones */
+    color: white; /* Texto blanco */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555; /* Fondo gris oscuro al pasar el mouse */
+}
+
+button:active {
+    background-color: #222; /* Fondo negro más oscuro al hacer clic */
+}
+
+/* Estilo para los botones de Clear y Delete Last */
+button.gray {
+    background-color: #ccc; /* Fondo gris claro */
+    color: black; /* Texto negro */
+}
+
+button.gray:hover {
+    background-color: #bbb; /* Fondo gris medio al pasar el mouse */
+}
+
+button.gray:active {
+    background-color: #aaa; /* Fondo gris oscuro al hacer clic */
+}
+
+.history-entry {
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-display: 0;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #444; /* Fondo gris oscuro */
+    border-radius: 5px; /* Bordes redondeados */
+}
